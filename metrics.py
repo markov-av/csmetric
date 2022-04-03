@@ -45,6 +45,8 @@ class MetricKAST(MetricBase):
 
         r = {}
         for gameRound in data['gameRounds']:
+            if not gameRound['roundEndReason']:
+                continue
             r[gameRound['roundNum']] = set()
             _stat = r[gameRound['roundNum']]
 
